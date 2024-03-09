@@ -820,6 +820,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "language": MessageLookupByLibrary.simpleMessage("Idioma"),
         "lastUpdated":
             MessageLookupByLibrary.simpleMessage("Última atualização"),
+        "launchPasskeyUrlAgain": MessageLookupByLibrary.simpleMessage(
+            "Iniciar a URL de chave de acesso novamente"),
         "leave": MessageLookupByLibrary.simpleMessage("Sair"),
         "leaveAlbum": MessageLookupByLibrary.simpleMessage("Sair do álbum"),
         "leaveFamily": MessageLookupByLibrary.simpleMessage("Sair da família"),
@@ -984,6 +986,9 @@ class MessageLookup extends MessageLookupByLibrary {
         "orPickAnExistingOne":
             MessageLookupByLibrary.simpleMessage("Ou escolha um existente"),
         "pair": MessageLookupByLibrary.simpleMessage("Parear"),
+        "passkey": MessageLookupByLibrary.simpleMessage("Chave de acesso"),
+        "passkeyAuthTitle": MessageLookupByLibrary.simpleMessage(
+            "Autenticação via Chave de acesso"),
         "password": MessageLookupByLibrary.simpleMessage("Senha"),
         "passwordChangedSuccessfully":
             MessageLookupByLibrary.simpleMessage("Senha alterada com sucesso"),
@@ -1208,8 +1213,6 @@ class MessageLookup extends MessageLookupByLibrary {
         "searchHint4": MessageLookupByLibrary.simpleMessage("Local"),
         "searchHint5": MessageLookupByLibrary.simpleMessage(
             "Em breve: Rostos e busca mágica ✨"),
-        "searchHintText": MessageLookupByLibrary.simpleMessage(
-            "Álbuns, meses, dias, anos, ..."),
         "searchLocationEmptySection": MessageLookupByLibrary.simpleMessage(
             "Fotos de grupo que estão sendo tiradas em algum raio da foto"),
         "searchPeopleEmptySection": MessageLookupByLibrary.simpleMessage(

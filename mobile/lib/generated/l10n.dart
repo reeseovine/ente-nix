@@ -5785,16 +5785,6 @@ class S {
     );
   }
 
-  /// `Albums, months, days, years, ...`
-  String get searchHintText {
-    return Intl.message(
-      'Albums, months, days, years, ...',
-      name: 'searchHintText',
-      desc: '',
-      args: [],
-    );
-  }
-
   /// `• Album names (e.g. "Camera")\n• Types of files (e.g. "Videos", ".gif")\n• Years and months (e.g. "2022", "January")\n• Holidays (e.g. "Christmas")\n• Photo descriptions (e.g. “#fun”)`
   String get searchByExamples {
     return Intl.message(
@@ -8308,11 +8298,11 @@ class S {
     );
   }
 
-  /// `Waiting for browser request...`
-  String get waitingForBrowserRequest {
+  /// `Waiting for verification...`
+  String get waitingForVerification {
     return Intl.message(
-      'Waiting for browser request...',
-      name: 'waitingForBrowserRequest',
+      'Waiting for verification...',
+      name: 'waitingForVerification',
       desc: '',
       args: [],
     );
@@ -8338,11 +8328,21 @@ class S {
     );
   }
 
-  /// `Passkey authentication`
+  /// `Passkey verification`
   String get passkeyAuthTitle {
     return Intl.message(
-      'Passkey authentication',
+      'Passkey verification',
       name: 'passkeyAuthTitle',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Verify passkey`
+  String get verifyPasskey {
+    return Intl.message(
+      'Verify passkey',
+      name: 'verifyPasskey',
       desc: '',
       args: [],
     );

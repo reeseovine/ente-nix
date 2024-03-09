@@ -12,7 +12,7 @@ description: ente photos application
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 
-version: 0.8.65+585
+version: 0.8.66+586
 publish_to: none
 
 environment:
@@ -175,7 +175,6 @@ dependencies:
   wallpaper_manager_flutter: ^0.0.2
   wechat_assets_picker: ^8.6.3
   widgets_to_image: ^0.0.2
-  workmanager: ^0.5.2
 
 dependency_overrides:
   # current fork of tfite_flutter_helper depends on ffi: ^1.x.x
