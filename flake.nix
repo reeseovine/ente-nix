@@ -20,7 +20,7 @@
 				default = pkgs.buildGoModule {
 					pname = "museum";
 					inherit version;
-					src = ./.;
+					src = ./server;
 					subPackages = [ "cmd/museum" ];
 					nativeBuildInputs = with pkgs; [ gcc libsodium musl pkg-config ];
 					buildInputs = with pkgs; [ libsodium ];
