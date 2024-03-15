@@ -7,16 +7,22 @@
 	};
 
 	outputs = { self, nixpkgs, utils }:
-		utils.lib.eachSystem [
-			"x86_64-linux"
-			"aarch64-linux"
-			"x86_64-darwin"
-			"aarch64-darwin"
-		] (system: let
-			pkgs = nixpkgs.legacyPackages.${system};
+		let
 			version = "v2.0.34";
+			supportedSystems = [
+				"x86_64-linux"
+				"x86_64-darwin"
+				"aarch64-linux"
+				"aarch64-darwin"
+			];
+			forAllSystems = nixpkgs.lib.genAttrs supportedSystems;
+			nixpkgsFor = forAllSystems (system: import nixpkgs { inherit system; });
 		in {
-			packages = {
+			# Provide some binary packages for selected system types.
+			packages = forAllSystems (system:
+				let
+					pkgs = nixpkgsFor.${system};
+				in {
 				default = pkgs.buildGoModule {
 					pname = "museum";
 					inherit version;
@@ -26,15 +32,20 @@
 					buildInputs = with pkgs; [ libsodium ];
 					vendorHash = "sha256-D3pJYrip2EEj98q3pawnSkRUiIyjLm82jlmV7owA69Q=";
 				};
-			};
+			});
 
 			# apps.default = utils.lib.mkApp { drv = self.packages.${system}.default; };
 
 			# Dependencies that are only needed for development
-			devShells.default = pkgs.mkShell {
-				buildInputs = with pkgs; [ gcc git go gopls gotools go-tools libsodium musl pkg-config ];
-			};
-		}); # // {
+			devShells = forAllSystems (system:
+				let
+					pkgs = nixpkgsFor.${system};
+				in {
+					default = pkgs.mkShell {
+						buildInputs = with pkgs; [ gcc git go gopls gotools go-tools libsodium musl pkg-config ];
+					};
+				});
+		}; # // {
 		# 	nixosModules.museum = { config, lib, pkgs, ... }:
 		# 		with lib;
 		# 		let
