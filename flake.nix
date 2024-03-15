@@ -33,6 +33,7 @@
 					vendorHash = "sha256-D3pJYrip2EEj98q3pawnSkRUiIyjLm82jlmV7owA69Q=";
 				};
 			});
+			defaultPackage = forAllSystems (system: self.packages.${system}.museum);
 
 			# apps.default = utils.lib.mkApp { drv = self.packages.${system}.default; };
 
