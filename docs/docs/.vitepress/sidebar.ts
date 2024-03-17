@@ -66,11 +66,20 @@ export const sidebar = [
         text: "Auth",
         items: [
             { text: "Introduction", link: "/auth/" },
+            { text: "FAQ", link: "/auth/faq/" },
             {
                 text: "Migration guides",
-                collapsed: true,
+                collapsed: false,
                 items: [
                     { text: "Introduction", link: "/auth/migration-guides/" },
+                    {
+                        text: "From Authy",
+                        link: "/auth/migration-guides/authy/",
+                    },
+                    {
+                        text: "Exporting your data",
+                        link: "/auth/migration-guides/export",
+                    },
                 ],
             },
         ],
@@ -85,8 +94,25 @@ export const sidebar = [
                 items: [
                     { text: "Introduction", link: "/self-hosting/guides/" },
                     {
+                        text: "Connect to custom server",
+                        link: "/self-hosting/guides/custom-server/",
+                    },
+                    {
+                        text: "Administering your server",
+                        link: "/self-hosting/guides/admin",
+                    },
+
+                    {
+                        text: "Mobile build",
+                        link: "/self-hosting/guides/mobile-build",
+                    },
+                    {
                         text: "System requirements",
                         link: "/self-hosting/guides/system-requirements",
+                    },
+                    {
+                        text: "Using external S3",
+                        link: "/self-hosting/guides/external-s3",
                     },
                 ],
             },
@@ -96,6 +122,10 @@ export const sidebar = [
                     {
                         text: "Verification code",
                         link: "/self-hosting/faq/otp",
+                    },
+                    {
+                        text: "Increase storage space",
+                        link: "/self-hosting/faq/storage-space",
                     },
                 ],
             },
